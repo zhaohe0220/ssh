@@ -16,11 +16,11 @@
   <table border="1" width="400">
     <tr>
       <td>商品名称</td>
-      <td><s:textfield name="pname"/> </td>
+      <td><s:textfield name="username"/> </td>
     </tr>
     <tr>
       <td>商品价格</td>
-      <td><s:textfield name="price"/> </td>
+      <td><s:textfield name="password"/> </td>
     </tr>
     <tr>
       <td colspan="2"><input type="submit" value="添加"></td>

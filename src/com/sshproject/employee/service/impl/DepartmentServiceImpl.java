@@ -1,12 +1,9 @@
 package com.sshproject.employee.service.impl;
 
 import com.sshproject.employee.dao.DepartmentDao;
-import com.sshproject.employee.dao.EmployeeDao;
 import com.sshproject.employee.domain.Department;
-import com.sshproject.employee.domain.Employee;
 import com.sshproject.employee.domain.PageBean;
 import com.sshproject.employee.service.DepartmentService;
-import com.sshproject.employee.service.EmployeeService;
 
 import java.util.List;
 
