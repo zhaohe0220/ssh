@@ -50,12 +50,24 @@
     <bean id="employeeAction" class="com.sshproject.employee.action.EmployeeAction" scope="prototype">
         <property name="employeeService" ref="employeeService"/>
     </bean>
+
+    <bean id="departmentAction" class="com.sshproject.employee.action.DepartmentAction" scope="prototype">
+        <property name="departmentService" ref="departmentService"/>
+    </bean>
     <!--//配置业务层类-->
     <bean id="employeeService" class="com.sshproject.employee.service.impl.EmployeeServiceImpl">
         <property name="employeeDao" ref="employeeDao"/>
     </bean>
+
+    <bean id="departmentService" class="com.sshproject.employee.service.impl.DepartmentServiceImpl">
+        <property name="departmentDao" ref="departmentDao"/>
+    </bean>
     <!--配置DAO类-->
     <bean id="employeeDao" class="com.sshproject.employee.dao.impl.EmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="departmentDao" class="com.sshproject.employee.dao.impl.DepartmentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

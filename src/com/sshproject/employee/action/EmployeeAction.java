@@ -1,5 +1,6 @@
 package com.sshproject.employee.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.sshproject.employee.domain.Employee;
@@ -29,7 +30,14 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 
     public String save(){
         System.out.println("success");
-        return NONE;
+        Employee existEmployee = employeeService.login(employee);
+        if(existEmployee == null){
+            this.addActionError("登录失败");
+            return INPUT;
+        }else {
+            ActionContext.getContext().getSession().put("existEmployee",existEmployee);
+            return SUCCESS;
+        }
     }
 
     public String test(){

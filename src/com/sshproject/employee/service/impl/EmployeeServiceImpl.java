@@ -1,6 +1,7 @@
 package com.sshproject.employee.service.impl;
 
 import com.sshproject.employee.dao.EmployeeDao;
+import com.sshproject.employee.domain.Employee;
 import com.sshproject.employee.service.EmployeeService;
 
 /**
@@ -13,4 +14,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeDao = employeeDao;
     }
 
+    @Override
+    public Employee login(Employee employee) {
+        Employee exitsEmployee = employeeDao.findUser(employee);
+        return exitsEmployee;
+    }
 }
