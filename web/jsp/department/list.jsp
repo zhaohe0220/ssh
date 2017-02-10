@@ -18,8 +18,21 @@
             <td>
                 <s:property value="#d.dname"/>
             </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/department_edit.action?did=<s:property value="#d.did"/> ">编辑</a>
+            </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/department_delete.action?did=<s:property value="#d.did"/> ">删除</a>
+            </td>
         </tr>
     </s:iterator>
+    <tr>
+        <td>
+        <td>
+            <a href="${pageContext.request.contextPath}/department_saveUI.action">添加</a>
+        </td>
+        </td>
+    </tr>
 </table>
 <table>
     <tr>

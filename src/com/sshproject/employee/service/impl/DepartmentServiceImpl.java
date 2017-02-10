@@ -4,12 +4,14 @@ import com.sshproject.employee.dao.DepartmentDao;
 import com.sshproject.employee.domain.Department;
 import com.sshproject.employee.domain.PageBean;
 import com.sshproject.employee.service.DepartmentService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Created by yunfei on 2017/2/5.
  */
+@Transactional
 public class DepartmentServiceImpl implements DepartmentService{
 
     public void setDepartmentDao(DepartmentDao departmentDao) {
@@ -38,5 +40,27 @@ public class DepartmentServiceImpl implements DepartmentService{
         List<Department> list = departmentDao.findByPage(begin,pageSize);
         pageBean.setList(list);
         return pageBean;
+    }
+
+    @Override
+    public void save(Department department) {
+        departmentDao.save(department);
+    }
+
+    @Override
+    public Department findById(Integer did) {
+        Department department =  departmentDao.findById(did);
+        return department;
+
+    }
+
+    @Override
+    public void update(Department department) {
+        departmentDao.update(department);
+    }
+
+    @Override
+    public void delete(Department department) {
+        departmentDao.delete(department);
     }
 }

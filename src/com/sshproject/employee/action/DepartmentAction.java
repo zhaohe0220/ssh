@@ -38,4 +38,29 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
         ActionContext.getContext().getValueStack().push(pageBean);
         return "findAll";
     }
+
+    public String saveUI(){
+        return "saveUI";
+    }
+
+    public String save(){
+        departmentService.save(department);
+        return "saveSuccess";
+    }
+
+    public String edit(){
+        department = departmentService.findById(department.getDid());
+        return "editSuccess";
+    }
+
+    public String update(){
+        departmentService.update(department);
+        return "updateSuccess";
+    }
+
+    public String delete(){
+        department = departmentService.findById(department.getDid());
+        departmentService.delete(department);
+        return "deleteSuccess";
+    }
 }
